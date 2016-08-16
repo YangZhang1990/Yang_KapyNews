@@ -35,6 +35,17 @@ namespace KapyApp.Controllers
             }
             return View(news1);
         }
+        // GET: News1/Category/1
+        public ActionResult Category(int? categoryId)
+        {
+            if (categoryId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var categoryModel = db.Categories.Include("News1")
+                .Single(n => n.categoryId == categoryId);
+            return View(categoryModel);
+        }
 
         // GET: News1/Create
         public ActionResult Create()
