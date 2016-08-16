@@ -49,9 +49,9 @@ namespace KapyApp.Controllers
             return PartialView();
         }
 
-        public ActionResult _MenuView() {
-            return PartialView("_MenuView", db.Categories.ToList());
-        }
+        //public ActionResult _MenuView() {
+        //    return PartialView("_MenuView", db.Categories.ToList());
+        //}
 
     }
 }
